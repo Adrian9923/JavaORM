@@ -1,0 +1,19 @@
+Your task is to create a database for a University System, using the Code First approach.
+
+In the database, we should keep information about students, teachers, and courses.
+
+The database should have the following tables:
+
+Student (id, first name, last name, phone number, average grade, attendance)
+
+Teacher (id, first name, last name, phone number, email, salary per hour)
+
+Course (id, name, description, start date, end date, credits)
+
+The relationships between the tables are as follows:
+
+Each student can be enrolled in many courses and each course, many students can be enrolled
+
+A teacher can teach in many courses but one course can be taught only by one teacher
+
+Use class hierarchy to reduce code duplication

@@ -1,0 +1,29 @@
+Your task is to design a database using the Code First approach.
+
+The GP needs to keep information about his patients. Each patient has first name, last name, address, email, date of birth, picture, information whether he has medical insurance or not.
+
+The GP should also keep history about all his visitations, diagnoses and prescribed medicaments. Each visitation has date and comments. Each diagnose has name and comments for it. Each medicament has name.
+
+Make sure all data is validated before inserting it into the database.
+
+Bonus Task
+Make a console-based user interface, which the doctor can use easily with the database.
+
+
+
+
+
+
+CHAT GPT(explanation relations between tables)
+
+In this updated design, we have introduced additional entities to represent the visitations, diagnoses, and medicaments.
+
+The Visitation entity represents a patient visitation and includes properties for the date and comments. It has a many-to-one relationship with the Patient entity, indicating that multiple visitations can be associated with a single patient.
+
+The Diagnose entity represents a medical diagnosis given during a visitation. It has properties for the name and comments. It has a many-to-one relationship with the Visitation entity, indicating that multiple diagnoses can be associated with a single visitation.
+
+The Medicament entity represents a prescribed medicament. It has a property for the name and a many-to-one relationship with the Diagnose entity, indicating that multiple medicaments can be associated with a single diagnose.
+
+The relationships between these entities are defined using annotations such as @OneToMany, @ManyToOne, and appropriate @JoinColumn annotations to establish the foreign key associations.
+
+Remember, this is just an example schema to illustrate

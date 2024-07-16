@@ -1,0 +1,37 @@
+Your task is to create a database for a Bills Payment System, using the Code First approach.
+
+In the database, you should keep information about the users who are using that system (first name, last name, email, password, billing details).
+
+Every billing detail has a number and owner.
+
+Also, there are two types of billing details - credit card and bank account.
+
+The credit card has card type, expiration month, expiration year. And the bank account has bank name and SWIFT code.
+
+
+
+
+CHAT GPT:
+
+In this solution, the User entity has a one-to-many relationship with BillingDetails. The BillingDetails class is an abstract class that serves as the parent class for CreditCard and BankAccount. Both CreditCard and BankAccount inherit from BillingDetails using the joined inheritance strategy.
+
+The BillingDetails class has a one-to-one relationship with CreditCard and BankAccount. Each child entity (CreditCard and BankAccount) has a corresponding OneToOne relationship with BillingDetails.
+
+Please note that the code provided is a simplified representation, and you may need to adjust it according to your specific requirements and additional validations.
+
+Users Table:
+
+Columns: id, first_name, last_name, email, password
+Relations: One-to-Many with BillingDetails (one user can have multiple billing details)
+BillingDetails Table (Abstract Class):
+
+Columns: id, number, owner
+Relations: One-to-One with CreditCard and BankAccount (using a shared primary key approach)
+CreditCard Table (Inherits from BillingDetails):
+
+Columns: card_type, expiration_month, expiration_year
+Relations: One-to-One with BillingDetails
+BankAccount Table (Inherits from BillingDetails):
+
+Columns: bank_name, swift_code
+Relations: One-to-One with BillingDetails
